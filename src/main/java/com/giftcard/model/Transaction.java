@@ -29,7 +29,7 @@ public class Transaction {
     private GiftCard giftCard;
 
     @Column(nullable = false)
-    private BigDecimal amount;
+    private BigDecimal balance;
 
     @Column(nullable = false)
     private LocalDateTime transactionDate;

@@ -1,8 +1,11 @@
 package com.giftcard.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+import com.giftcard.config.Role;
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -21,12 +24,15 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @NotBlank
     @Column(nullable = false)
     private String password;
 
+    // User.java
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String role;  // ADMIN, CUSTOMER
+    private Role role; // Change from String to Role enum
 
-    @Column(nullable = false)
-    private double balance;  // User wallet balance
+//    @Column(nullable = false)
+    private BigDecimal balance;  // User wallet balance
 }
