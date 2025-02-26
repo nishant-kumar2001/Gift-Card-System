@@ -75,7 +75,8 @@ giftcard-system/
 - **Delete:** `POST /api/giftcards/{id}`
 
 ### Transactions
-- **Get User Transactions:** `GET /api/transactions`
+- **Get User Transactions:** `GET /api/transactions/user/{userId}`
+- **User Purchase Transactions:** `POST /api/transactions/purchase`
 
 ## Future Enhancements
 - Implementing Kafka for real-time notifications.
